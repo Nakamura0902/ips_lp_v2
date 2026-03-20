@@ -1,0 +1,1997 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DDS iPS-X | 人工多能性幹細胞培養液 | SAISEI</title>
+<meta name="description" content="細胞が、目を覚ます。iPS幹細胞培養液×DDS技術。9種の成長因子配合。再生美容の最終形。10mL・約1ヶ月分 ¥16,500">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400;500&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+/* =============================================================
+   RESET & ROOT
+============================================================= */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;font-size:16px;}
+body{
+  font-family:'Noto Sans JP','Hiragino Kaku Gothic Pro',sans-serif;
+  font-weight:300;
+  background:#FFFFFF;
+  color:#1C2B3A;
+  overflow-x:hidden;
+  line-height:1.8;
+}
+img{max-width:100%;height:auto;display:block;}
+a{text-decoration:none;color:inherit;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;}
+
+:root{
+  /* ダーク（ヒーロー・最終CTA専用） */
+  --black:      #0D1117;
+  --dark:       #111827;
+  --navy:       #1A2533;
+  --navy-mid:   #243344;
+
+  /* ライト基調 */
+  --white:      #FFFFFF;
+  --snow:       #FAFAF9;
+  --off-white:  #F6F8FA;
+
+  /* クリニックブルー */
+  --pale-blue:  #EAF5FB;
+  --light-blue: #C0DCE8;
+  --mid-blue:   #7BBCDA;
+  --deep-blue:  #3A7FA0;
+
+  /* クリニックピンク */
+  --pale-pink:  #FBF0F4;
+  --light-pink: #E8C4D4;
+  --mid-pink:   #D4A0B8;
+
+  /* シルバー */
+  --silver-pale:#F0F4F6;
+  --silver:     #C0CAD2;
+  --silver-dark:#8AA0B0;
+
+  /* ゴールド（アクセント） */
+  --gold:       #C5A56A;
+
+  /* テキスト */
+  --text:       #1C2B3A;
+  --text-mid:   #4A6070;
+  --text-light: #7A98AA;
+  --text-lighter:#A8BEC8;
+
+  /* ボーダー */
+  --border:     #DDE8EE;
+  --border-pink:#ECD8E2;
+}
+
+/* =============================================================
+   HEADER
+============================================================= */
+.site-header{
+  position:fixed;top:0;left:0;right:0;z-index:300;
+  padding:14px 20px;
+  display:flex;align-items:center;justify-content:space-between;
+  transition:background .4s ease, backdrop-filter .4s ease;
+}
+.site-header.scrolled{
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--border);
+}
+.hdr-logo{
+  font-family:'Cormorant Garamond',serif;
+  font-size:18px;font-weight:400;
+  letter-spacing:.1em;color:#fff;
+  line-height:1;
+  transition:color .35s;
+}
+.site-header.scrolled .hdr-logo{ color:var(--text); }
+.hdr-logo span{
+  display:block;font-size:8px;
+  font-family:'Noto Sans JP',sans-serif;
+  font-weight:300;color:rgba(255,255,255,.5);
+  letter-spacing:.25em;text-transform:uppercase;
+  margin-top:3px;
+  transition:color .35s;
+}
+.site-header.scrolled .hdr-logo span{ color:var(--text-light); }
+.hdr-btn{
+  font-size:10.5px;font-weight:500;
+  letter-spacing:.12em;
+  padding:10px 18px;
+  border:1px solid rgba(255,255,255,.35);
+  color:#fff;
+  transition:all .3s ease;
+  display:inline-block;
+}
+.site-header.scrolled .hdr-btn{
+  border-color:var(--deep-blue);
+  color:var(--deep-blue);
+}
+.hdr-btn:hover{
+  background:#fff;color:var(--navy);
+  border-color:#fff;
+}
+.site-header.scrolled .hdr-btn:hover{
+  background:var(--deep-blue);color:#fff;
+}
+
+/* =============================================================
+   HERO — FULL VIEWPORT CINEMATIC
+============================================================= */
+.hero{
+  position:relative;
+  height:100svh;height:100vh;
+  min-height:640px;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  background:var(--black);
+}
+
+/* Background image — cropped to show face and eyes */
+.hero-bg{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  object-fit:cover;
+  object-position:center 18%;          /* shows face, crops shoulders */
+  filter:brightness(.62) contrast(1.08) saturate(.9);
+  transform:scale(1.04);               /* slight scale for entry animation */
+  animation:heroReveal 1.8s cubic-bezier(.4,0,.2,1) forwards;
+}
+@keyframes heroReveal{
+  from{transform:scale(1.12);filter:brightness(.2) contrast(1.1) saturate(.6);}
+  to  {transform:scale(1.04);filter:brightness(.62) contrast(1.08) saturate(.9);}
+}
+
+/* Multi-stop overlay — transparent top, solid bottom */
+.hero-overlay{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(to bottom,
+      rgba(13,17,23,0) 0%,
+      rgba(13,17,23,0) 30%,
+      rgba(13,17,23,.55) 55%,
+      rgba(13,17,23,.90) 72%,
+      rgba(13,17,23,1) 88%,
+      rgba(13,17,23,1) 100%);
+}
+
+/* Subtle radial glow at bottom center */
+.hero-glow{
+  position:absolute;
+  bottom:-80px;left:50%;transform:translateX(-50%);
+  width:600px;height:400px;
+  background:radial-gradient(ellipse, rgba(111,168,200,.12) 0%, transparent 65%);
+  pointer-events:none;
+}
+
+/* Content */
+.hero-content{
+  position:relative;z-index:2;
+  padding:0 24px 52px;
+}
+
+.hero-eyebrow{
+  display:inline-block;
+  font-family:'Cormorant Garamond',serif;
+  font-size:10px;font-weight:400;
+  letter-spacing:.35em;text-transform:uppercase;
+  color:var(--silver);
+  border:1px solid rgba(176,190,202,.4);
+  padding:5px 14px;
+  margin-bottom:24px;
+  opacity:0;
+  animation:textUp .7s ease .4s forwards;
+}
+.hero-headline{
+  font-family:'Noto Serif JP',serif;
+  font-size:clamp(52px,13vw,88px);
+  font-weight:200;
+  line-height:1.15;
+  letter-spacing:.04em;
+  color:#fff;
+  margin-bottom:20px;
+  opacity:0;
+  animation:textUp .8s ease .7s forwards;
+}
+.hero-headline em{
+  font-style:normal;
+  display:block;
+  font-size:.58em;
+  font-weight:300;
+  color:var(--silver);
+  letter-spacing:.12em;
+  margin-top:6px;
+}
+.hero-sub{
+  font-size:12px;font-weight:300;
+  color:rgba(255,255,255,.62);
+  letter-spacing:.2em;
+  line-height:2;
+  margin-bottom:32px;
+  opacity:0;
+  animation:textUp .7s ease 1s forwards;
+}
+.hero-actions{
+  display:flex;flex-direction:column;gap:14px;
+  max-width:320px;
+  opacity:0;
+  animation:textUp .7s ease 1.25s forwards;
+}
+.hero-cta-main{
+  display:block;
+  background:#fff;
+  color:var(--navy);
+  font-size:13px;font-weight:500;
+  letter-spacing:.14em;
+  padding:17px 24px;
+  text-align:center;
+  transition:background .3s, transform .2s;
+}
+.hero-cta-main:hover{background:var(--pale-blue);}
+.hero-cta-sub{
+  font-size:11px;font-weight:300;
+  color:rgba(255,255,255,.45);
+  letter-spacing:.15em;
+  text-align:center;
+}
+.hero-scroll{
+  position:absolute;
+  bottom:24px;right:24px;
+  z-index:2;
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  opacity:0;
+  animation:textUp .6s ease 1.6s forwards;
+}
+.hero-scroll-line{
+  width:1px;height:48px;
+  background:linear-gradient(to bottom, rgba(255,255,255,.0), rgba(255,255,255,.4));
+  animation:scrollLine 2s ease-in-out infinite;
+}
+.hero-scroll-text{
+  font-size:9px;letter-spacing:.3em;
+  color:rgba(255,255,255,.35);
+  text-transform:uppercase;
+  writing-mode:vertical-rl;
+}
+@keyframes scrollLine{
+  0%,100%{transform:scaleY(1);opacity:.4;}
+  50%{transform:scaleY(.6);opacity:.1;}
+}
+@keyframes textUp{
+  from{opacity:0;transform:translateY(18px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+/* =============================================================
+   MARQUEE STRIP
+============================================================= */
+.marquee-wrap{
+  background:var(--pale-blue);
+  border-top:1px solid var(--light-blue);
+  border-bottom:1px solid var(--light-blue);
+  padding:11px 0;overflow:hidden;
+}
+.marquee-track{
+  display:inline-flex;white-space:nowrap;
+  animation:marquee 24s linear infinite;
+}
+.marquee-item{
+  font-family:'Cormorant Garamond',serif;
+  font-size:11px;font-weight:400;
+  letter-spacing:.28em;text-transform:uppercase;
+  color:var(--deep-blue);
+  padding:0 28px;
+}
+.marquee-item::before{content:'✦ ';color:var(--mid-blue);opacity:.5;}
+@keyframes marquee{
+  0%{transform:translateX(0);}
+  100%{transform:translateX(-50%);}
+}
+
+/* =============================================================
+   GENERIC SECTION HELPERS
+============================================================= */
+.sec{padding:80px 24px;}
+.sec-dark{background:var(--off-white);color:var(--text);}   /* ライト変換 */
+.sec-black{background:var(--white);color:var(--text);}       /* ライト変換 */
+.sec-navy{background:var(--pale-pink);color:var(--text);}    /* ライト変換 */
+.sec-light{background:var(--off-white);color:var(--text);}
+.sec-pale-blue{background:var(--pale-blue);color:var(--text);}
+.sec-pale-pink{background:var(--pale-pink);color:var(--text);}
+/* ダーク専用クラス（ヒーロー・最終CTA向け） */
+.sec-hero-dark{background:var(--black);color:#fff;}
+.container{max-width:720px;margin:0 auto;}
+.tc{text-align:center;}
+
+.eyebrow{
+  display:block;
+  font-family:'Cormorant Garamond',serif;
+  font-size:9.5px;font-weight:400;
+  letter-spacing:.38em;text-transform:uppercase;
+  color:var(--mid-blue);
+  margin-bottom:14px;
+}
+.eyebrow-silver{color:var(--silver-dark);}
+.eyebrow-gold{color:var(--gold);}
+
+.sec-title{
+  font-family:'Noto Serif JP',serif;
+  font-size:clamp(22px,5.5vw,34px);
+  font-weight:300;line-height:1.55;
+  letter-spacing:.04em;
+  margin-bottom:20px;
+}
+.sec-body{
+  font-size:14px;line-height:2.05;
+  color:var(--text-mid);
+}
+
+.divider-h{
+  width:36px;height:1px;
+  background:linear-gradient(90deg,var(--mid-blue),var(--silver));
+  margin:18px auto;
+}
+.divider-h-left{margin:18px 0;}
+
+/* Fade-in via Intersection Observer */
+.reveal{
+  opacity:0;transform:translateY(26px);
+  transition:opacity .75s ease, transform .75s ease;
+}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal.d1{transition-delay:.1s;}
+.reveal.d2{transition-delay:.2s;}
+.reveal.d3{transition-delay:.3s;}
+.reveal.d4{transition-delay:.4s;}
+.reveal.d5{transition-delay:.5s;}
+
+/* =============================================================
+   ATMOSPHERIC EYE STRIP
+   — shows only the model's eyes from IMG_4267
+============================================================= */
+.eye-strip{
+  position:relative;
+  height:220px;
+  overflow:hidden;
+}
+.eye-strip-img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  /* 目の位置にピンポイントで合わせる */
+  object-fit:cover;
+  object-position:center 30%;
+  filter:brightness(.5) contrast(1.18) saturate(.65);
+}
+/* Gradient fade on both sides */
+.eye-strip::before,
+.eye-strip::after{
+  content:'';
+  position:absolute;top:0;bottom:0;
+  width:160px;z-index:2;
+  pointer-events:none;
+}
+.eye-strip::before{
+  left:0;
+  background:linear-gradient(to right, var(--black), transparent);
+}
+.eye-strip::after{
+  right:0;
+  background:linear-gradient(to left, var(--black), transparent);
+}
+.eye-strip-text{
+  position:absolute;
+  inset:0;z-index:3;
+  display:flex;align-items:center;justify-content:center;
+}
+.eye-strip-copy{
+  font-family:'Noto Serif JP',serif;
+  font-size:clamp(13px,3.5vw,18px);
+  font-weight:300;
+  letter-spacing:.18em;
+  color:rgba(255,255,255,.82);
+  text-align:center;
+  line-height:1.9;
+}
+
+/* =============================================================
+   PAIN SECTION
+============================================================= */
+.pain-list{list-style:none;margin-top:32px;display:flex;flex-direction:column;}
+.pain-item{
+  display:flex;align-items:flex-start;gap:16px;
+  padding:18px 0;
+  border-bottom:1px solid var(--border);
+}
+.pain-item:first-child{border-top:1px solid var(--border);}
+.pain-mark{
+  font-family:'Cormorant Garamond',serif;
+  font-size:22px;font-weight:300;
+  color:var(--mid-blue);
+  flex-shrink:0;line-height:1.2;
+  margin-top:2px;
+}
+.pain-text{
+  font-size:14px;line-height:1.85;
+  color:var(--text-mid);
+}
+
+.pain-bottom{
+  margin-top:36px;
+  background:linear-gradient(135deg,var(--pale-blue),var(--pale-pink));
+  border:1px solid var(--light-blue);
+  padding:24px 22px;
+  text-align:center;
+}
+.pain-bottom-title{
+  font-family:'Noto Serif JP',serif;
+  font-size:clamp(16px,4vw,22px);
+  font-weight:300;
+  color:var(--text);
+  line-height:1.65;
+  margin-bottom:10px;
+}
+.pain-bottom-body{
+  font-size:13px;font-weight:300;
+  color:var(--text-mid);
+  line-height:1.95;
+}
+
+/* =============================================================
+   ROOT CAUSE — Light silver-gray
+============================================================= */
+.cause-section{background:var(--silver-pale);}
+.cause-body{
+  font-size:14px;line-height:2.08;
+  color:var(--text-mid);
+  margin-top:20px;
+}
+.cause-body strong{color:var(--text);font-weight:500;}
+
+.cause-wall{
+  margin-top:32px;
+  position:relative;
+}
+.cause-wall-inner{
+  display:flex;flex-direction:column;gap:0;
+  border:1px solid var(--border);
+  background:var(--white);
+}
+.wall-row{
+  display:flex;align-items:stretch;
+  border-bottom:1px solid var(--border);
+}
+.wall-row:last-child{border-bottom:none;}
+.wall-label{
+  width:100px;flex-shrink:0;
+  padding:14px 14px;
+  display:flex;align-items:center;
+  font-size:11px;letter-spacing:.08em;
+  color:var(--text-mid);
+  border-right:1px solid var(--border);
+  background:var(--pale-blue);
+}
+.wall-bar-wrap{
+  flex:1;padding:12px 14px;
+  display:flex;align-items:center;
+}
+.wall-bar{
+  height:6px;border-radius:3px;
+  transition:width 1.2s cubic-bezier(.4,0,.2,1);
+}
+.wall-bar-animated{width:0!important;}
+.wall-bar-animated.grow{width:var(--w)!important;}
+.wall-note{
+  font-size:10px;color:var(--text-light);
+  margin-left:10px;white-space:nowrap;
+}
+
+.cause-arrow{
+  text-align:center;padding:24px 0 8px;
+  font-size:13px;letter-spacing:.2em;
+  color:var(--text-lighter);
+}
+.cause-arrow-icon{
+  font-size:28px;display:block;margin-bottom:6px;
+  color:var(--mid-blue);
+  animation:arrowBounce 2s ease-in-out infinite;
+}
+@keyframes arrowBounce{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(6px);}
+}
+
+.cause-resolution{
+  background:linear-gradient(135deg, var(--pale-blue), var(--pale-pink));
+  border:1px solid var(--light-blue);
+  padding:28px 22px;
+  text-align:center;
+  margin-top:8px;
+}
+.cause-resolution-title{
+  font-family:'Noto Serif JP',serif;
+  font-size:clamp(16px,4vw,22px);
+  font-weight:300;color:var(--text);
+  line-height:1.7;
+  margin-bottom:8px;
+}
+.cause-resolution-body{
+  font-size:13px;color:var(--text-mid);
+  line-height:1.9;
+}
+
+/* =============================================================
+   BOTTLE PARALLAX — dark DNA image as bg, bottle text overlay
+============================================================= */
+.bottle-parallax{
+  position:relative;
+  height:420px;
+  overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+}
+.bottle-parallax-bg{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  object-fit:cover;
+  object-position:center center;
+  /* Diagonal crop: show center of image (bottle + DNA helix) */
+  transform:scale(1.1);
+  filter:brightness(.38) saturate(.7) contrast(1.1);
+}
+/* Clip the image with a diagonal mask */
+.bottle-parallax::before{
+  content:'';
+  position:absolute;inset:0;z-index:1;
+  background:
+    linear-gradient(160deg,
+      rgba(13,17,23,.7) 0%,
+      rgba(13,17,23,0) 40%,
+      rgba(13,17,23,0) 60%,
+      rgba(13,17,23,.7) 100%),
+    linear-gradient(to bottom,
+      rgba(13,17,23,.9) 0%,
+      rgba(13,17,23,0) 30%,
+      rgba(13,17,23,0) 70%,
+      rgba(13,17,23,.9) 100%);
+}
+.bottle-parallax-content{
+  position:relative;z-index:2;
+  text-align:center;
+  padding:0 24px;
+}
+.bp-label{
+  font-family:'Cormorant Garamond',serif;
+  font-size:10px;letter-spacing:.38em;
+  text-transform:uppercase;
+  color:var(--silver);
+  margin-bottom:16px;
+}
+.bp-headline{
+  font-family:'Noto Serif JP',serif;
+  font-size:clamp(26px,7vw,48px);
+  font-weight:200;
+  color:#fff;
+  line-height:1.35;
+  letter-spacing:.06em;
+}
+.bp-headline em{
+  font-style:normal;
+  color:var(--light-blue);
+}
+.bp-sub{
+  margin-top:14px;
+  font-size:12px;letter-spacing:.18em;
+  color:rgba(255,255,255,.5);
+}
+
+/* =============================================================
+   PRODUCT INTRO (light section)
+============================================================= */
+.product-intro-section{background:var(--dark);color:#fff;}
+.product-grid{
+  display:flex;flex-direction:column;gap:36px;
+  align-items:flex-start;
+  margin-top:12px;
+}
+/* Product image */
+.product-img-wrap{
+  width:100%;
+  max-width:340px;
+  margin:0 auto;
+  position:relative;
+  flex-shrink:0;
+}
+.product-img-wrap img{
+  width:100%;
+  display:block;
+  border-radius:2px;
+  filter:drop-shadow(0 16px 48px rgba(0,0,0,.22));
+}
+.product-name-en{
+  font-family:'Cormorant Garamond',serif;
+  font-size:48px;font-weight:300;
+  letter-spacing:.06em;
+  color:#fff;line-height:1;
+}
+.product-name-jp{
+  font-size:11px;letter-spacing:.2em;
+  color:rgba(255,255,255,.4);
+  margin:6px 0 0;
+}
+.product-desc{
+  font-size:14px;line-height:2.05;
+  color:rgba(255,255,255,.65);
+  margin-top:18px;
+}
+.product-tags{
+  display:flex;flex-wrap:wrap;gap:7px;
+  margin-top:16px;
+}
+.tag{
+  font-size:10px;letter-spacing:.1em;
+  padding:5px 12px;
+  background:rgba(111,168,200,.12);
+  color:var(--light-blue);
+  border:1px solid rgba(111,168,200,.22);
+}
+
+/* =============================================================
+   TECH — 3 BLOCKS（白地）
+============================================================= */
+.tech-section{background:var(--white);}
+.tech-blocks{
+  display:flex;flex-direction:column;
+  gap:0;margin-top:36px;
+}
+.tech-block{
+  padding:36px 0;
+  border-bottom:1px solid var(--border);
+}
+.tech-block:last-child{border-bottom:none;}
+.tech-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:68px;font-weight:300;
+  color:var(--light-blue);
+  opacity:.35;
+  line-height:1;margin-bottom:-10px;
+}
+.tech-en{
+  font-family:'Cormorant Garamond',serif;
+  font-size:10px;font-weight:400;
+  letter-spacing:.28em;text-transform:uppercase;
+  color:var(--mid-blue);display:block;
+  margin-bottom:8px;
+}
+.tech-title{
+  font-family:'Noto Serif JP',serif;
+  font-size:clamp(18px,4.5vw,26px);
+  font-weight:300;color:var(--text);
+  line-height:1.55;margin-bottom:14px;
+}
+.tech-body{
+  font-size:13.5px;font-weight:300;
+  line-height:2.05;
+  color:var(--text-mid);
+}
+.tech-body strong{color:var(--text);font-weight:500;}
+.tech-callout{
+  margin-top:18px;
+  background:var(--pale-blue);
+  border-left:2px solid var(--mid-blue);
+  padding:13px 16px;
+  font-size:12.5px;
+  color:var(--deep-blue);
+  line-height:1.85;
+}
+
+/* iPS vs MSC compare（ライト版） */
+.compare-dark{
+  width:100%;border-collapse:collapse;
+  margin-top:22px;font-size:11.5px;
+}
+.compare-dark th,.compare-dark td{
+  border:1px solid var(--border);
+  padding:10px 12px;text-align:center;
+  line-height:1.5;
+}
+.compare-dark th{
+  background:var(--off-white);
+  color:var(--text-mid);
+  font-weight:500;letter-spacing:.08em;
+  font-family:'Noto Sans JP',sans-serif;
+  font-size:10.5px;
+}
+.compare-dark th.ips-col{background:var(--pale-blue);color:var(--deep-blue);}
+.compare-dark td{color:var(--text-mid);}
+.compare-dark td.ips-val{
+  background:var(--pale-blue);
+  color:var(--deep-blue);
+  font-weight:500;
+}
+
+/* =============================================================
+   GROWTH FACTORS（ペールブルー）
+============================================================= */
+.gf-section{
+  background:var(--pale-blue);
+  border-top:1px solid var(--light-blue);
+}
+.gf-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-top:28px;
+}
+.gf-card{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-top:2px solid var(--light-blue);
+  padding:18px 14px;
+}
+.gf-card.wide{grid-column:1/-1;}
+.gf-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:24px;font-weight:600;
+  color:var(--deep-blue);
+  letter-spacing:.03em;line-height:1;
+}
+.gf-full{
+  font-size:8.5px;color:var(--text-lighter);
+  letter-spacing:.04em;line-height:1.5;
+  margin:5px 0 7px;
+}
+.gf-desc{font-size:11px;color:var(--text-mid);line-height:1.75;}
+
+.gf-summary-bar{
+  margin-top:24px;
+  background:linear-gradient(135deg,var(--pale-blue),var(--pale-pink));
+  border:1px solid var(--light-blue);
+  padding:20px 18px;text-align:center;
+}
+.gf-summary-bar strong{
+  display:block;
+  font-family:'Noto Serif JP',serif;
+  font-size:15px;font-weight:400;color:var(--text);
+  margin-bottom:6px;
+}
+.gf-summary-bar p{
+  font-size:12px;color:var(--text-mid);line-height:1.9;
+}
+
+/* =============================================================
+   HOW TO USE
+============================================================= */
+.how-section{background:var(--off-white);color:var(--text);}
+.steps-wrap{margin-top:36px;position:relative;}
+.steps-vline{
+  position:absolute;left:22px;top:46px;bottom:46px;
+  width:1px;
+  background:linear-gradient(to bottom, var(--mid-blue), var(--light-blue));
+  opacity:.4;
+}
+.step-row{
+  display:flex;gap:20px;
+  align-items:flex-start;
+  padding:18px 0;
+}
+.step-n{
+  width:44px;height:44px;flex-shrink:0;
+  background:var(--navy);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond',serif;font-size:20px;
+  position:relative;z-index:2;
+}
+.step-title{
+  font-family:'Noto Serif JP',serif;
+  font-size:16px;font-weight:400;color:var(--text);
+  margin-bottom:5px;
+}
+.step-body{font-size:13px;color:var(--text-mid);line-height:1.9;}
+
+.mix-note{
+  margin-top:24px;
+  background:var(--pale-blue);
+  border:1px solid rgba(111,168,200,.3);
+  padding:20px 18px;
+  text-align:center;
+}
+.mix-note-title{
+  font-family:'Noto Serif JP',serif;
+  font-size:15px;font-weight:400;
+  color:var(--deep-blue);margin-bottom:6px;
+}
+.mix-note-body{font-size:13px;color:var(--text-mid);line-height:1.9;}
+
+/* =============================================================
+   TRUST / BRAND（薄ピンク）
+============================================================= */
+.trust-section{
+  background:var(--pale-pink);
+  border-top:1px solid var(--border-pink);
+}
+.trust-cards{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:14px;margin-top:36px;
+}
+.trust-card{
+  background:var(--white);
+  border:1px solid var(--border-pink);
+  border-top:2px solid var(--light-pink);
+  padding:24px 16px;
+}
+.t-icon{display:none;}
+.t-label{
+  font-family:'Cormorant Garamond',serif;
+  font-size:9px;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--mid-pink);margin-bottom:6px;
+}
+.t-value{
+  font-family:'Noto Serif JP',serif;
+  font-size:clamp(15px,4vw,20px);
+  font-weight:300;color:var(--text);line-height:1.4;
+}
+.t-sub{font-size:11px;color:var(--text-light);margin-top:5px;line-height:1.7;}
+
+/* Counter animation */
+.counter-wrap{
+  text-align:center;
+  margin-top:36px;
+  padding:28px 24px;
+  background:var(--white);
+  border:1px solid var(--border-pink);
+}
+.counter-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(48px,12vw,72px);
+  font-weight:300;color:var(--text);line-height:1;
+}
+.counter-unit{
+  font-family:'Noto Serif JP',serif;
+  font-size:18px;font-weight:300;color:var(--text);
+}
+.counter-label{
+  font-size:11px;letter-spacing:.2em;
+  color:var(--text-light);
+  margin-top:8px;
+}
+.award-line{
+  margin-top:24px;
+  display:flex;align-items:center;justify-content:center;gap:12px;
+}
+.award-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  border:1px solid var(--gold);
+  padding:9px 18px;
+  font-size:11.5px;letter-spacing:.14em;
+  color:var(--gold);
+}
+
+/* =============================================================
+   RECOMMEND (who is it for)
+============================================================= */
+.recommend-section{background:var(--pale-pink);color:var(--text);}
+.rec-list{list-style:none;margin-top:28px;display:flex;flex-direction:column;gap:10px;}
+.rec-item{
+  display:flex;align-items:flex-start;gap:14px;
+  background:#fff;padding:16px 18px;
+  font-size:14px;font-weight:400;
+  color:var(--text);line-height:1.7;
+}
+.rec-item::before{
+  content:'✦';color:var(--light-blue);
+  font-size:13px;flex-shrink:0;margin-top:2px;
+}
+
+/* =============================================================
+   ANCHOR / PRICE CONTEXT（シルバーグレー）
+============================================================= */
+.anchor-section{background:var(--silver-pale);}
+.anchor-compare{
+  display:flex;flex-direction:column;gap:12px;
+  margin-top:28px;
+}
+.anchor-row{
+  display:flex;align-items:center;gap:14px;
+  padding:16px 18px;
+  background:var(--white);
+  border:1px solid var(--border);
+}
+.anchor-row-label{
+  flex:1;font-size:13px;color:var(--text-mid);
+}
+.anchor-row-price{
+  font-family:'Cormorant Garamond',serif;
+  font-size:22px;font-weight:400;
+  color:var(--text-light);
+  white-space:nowrap;
+}
+.anchor-row.highlight{
+  background:var(--pale-blue);
+  border-color:var(--light-blue);
+}
+.anchor-row.highlight .anchor-row-label{color:var(--text);font-weight:500;}
+.anchor-row.highlight .anchor-row-price{color:var(--deep-blue);font-weight:600;}
+.anchor-note{
+  margin-top:16px;
+  font-size:11px;color:var(--text-lighter);
+  line-height:1.8;text-align:center;
+}
+
+/* =============================================================
+   PURCHASE CTA
+============================================================= */
+.cta-section{background:var(--off-white);color:var(--text);}
+.purchase-card{
+  background:#fff;
+  border:1px solid var(--border);
+  padding:38px 24px 32px;
+  max-width:480px;
+  margin:32px auto 0;
+  text-align:center;
+}
+.pc-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:32px;font-weight:300;
+  letter-spacing:.08em;color:var(--text);
+}
+.pc-sub{
+  font-size:10.5px;color:var(--text-light);
+  letter-spacing:.16em;margin:5px 0 22px;
+}
+.pc-specs{
+  display:flex;justify-content:center;gap:24px;
+  padding:16px 0;border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  margin-bottom:22px;
+}
+.pc-spec-label{font-size:10px;color:var(--text-light);margin-bottom:3px;letter-spacing:.1em;}
+.pc-spec-val{
+  font-family:'Noto Serif JP',serif;
+  font-size:15px;font-weight:400;color:var(--text);
+}
+.pc-price{
+  font-family:'Cormorant Garamond',serif;
+  font-size:52px;font-weight:300;
+  color:var(--text);line-height:1;
+}
+.pc-price sup{
+  font-size:15px;vertical-align:super;
+  font-family:'Noto Sans JP',sans-serif;font-weight:300;
+}
+.pc-tax{font-size:11px;color:var(--text-light);margin:4px 0 14px;}
+.pc-badge{
+  display:inline-block;
+  background:var(--pale-blue);
+  color:var(--deep-blue);
+  font-size:12px;font-weight:500;
+  padding:7px 18px;margin-bottom:22px;
+  letter-spacing:.06em;
+}
+.btn-buy{
+  display:block;width:100%;
+  background:linear-gradient(135deg,#18304C,#2A4D6E);
+  color:#fff;
+  font-size:14px;font-weight:500;
+  letter-spacing:.14em;
+  padding:19px 24px 17px;
+  text-align:center;
+  border:none;
+  position:relative;overflow:hidden;
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+.btn-buy::after{
+  content:'';
+  position:absolute;top:0;left:-100%;
+  width:100%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent);
+  transition:left .55s ease;
+}
+.btn-buy:hover::after{left:100%;}
+.btn-buy:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 30px rgba(24,48,76,.3);
+}
+.btn-buy small{
+  display:block;font-size:10px;font-weight:300;
+  opacity:.72;margin-top:4px;
+}
+
+/* =============================================================
+   FAQ
+============================================================= */
+.faq-section{background:var(--off-white);color:var(--text);}
+.faq-list{margin-top:32px;}
+details.faq-item{border-bottom:1px solid var(--border);}
+details.faq-item:first-child{border-top:1px solid var(--border);}
+summary.faq-q{
+  display:flex;align-items:flex-start;gap:14px;
+  padding:19px 4px;cursor:pointer;
+  font-size:14px;font-weight:500;
+  color:var(--text);line-height:1.65;
+  list-style:none;user-select:none;
+  -webkit-tap-highlight-color:transparent;
+}
+summary.faq-q::-webkit-details-marker{display:none;}
+summary.faq-q::marker{display:none;}
+.faq-q-q{
+  font-family:'Cormorant Garamond',serif;
+  font-size:21px;font-weight:600;
+  color:var(--mid-blue);
+  flex-shrink:0;line-height:1.2;
+}
+.faq-q-t{flex:1;}
+.faq-q-ic{
+  font-size:20px;color:var(--silver);
+  flex-shrink:0;
+  transition:transform .3s ease;
+  margin-top:-1px;
+}
+details[open] .faq-q-ic{transform:rotate(45deg);}
+.faq-a{
+  padding:0 4px 20px 36px;
+  font-size:13.5px;font-weight:300;
+  color:var(--text-mid);line-height:1.95;
+}
+
+/* =============================================================
+   FINAL CTA DARK
+============================================================= */
+.final-cta{
+  background:var(--black);
+  text-align:center;
+  padding:80px 24px;
+}
+.final-cta .sec-title{color:#fff;}
+.final-price{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(36px,9vw,54px);
+  font-weight:300;color:#fff;
+  margin:20px 0 6px;
+}
+.final-price-sub{font-size:12px;color:rgba(255,255,255,.4);margin-bottom:28px;}
+.btn-final{
+  display:inline-block;
+  background:#fff;color:var(--navy);
+  font-size:13.5px;font-weight:500;
+  letter-spacing:.14em;
+  padding:18px 48px;
+  transition:all .3s;
+}
+.btn-final:hover{background:var(--pale-blue);}
+.btn-final-arrow::after{content:' →';}
+
+/* =============================================================
+   FOOTNOTES & FOOTER
+============================================================= */
+.footnotes{
+  background:#0A0D12;
+  padding:20px 24px;
+  font-size:10px;color:rgba(255,255,255,.28);
+  line-height:2;
+  max-width:720px;margin:0 auto;
+}
+footer{
+  background:#060810;
+  padding:40px 24px 28px;
+  text-align:center;
+}
+.ft-logo{
+  font-family:'Cormorant Garamond',serif;
+  font-size:22px;font-weight:300;
+  color:rgba(255,255,255,.7);
+  letter-spacing:.14em;margin-bottom:4px;
+}
+.ft-brand{
+  font-size:9px;letter-spacing:.28em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.22);
+  margin-bottom:24px;
+}
+.ft-links{
+  display:flex;flex-wrap:wrap;
+  justify-content:center;gap:0;
+  margin-bottom:22px;
+}
+.ft-links a{
+  font-size:10px;letter-spacing:.08em;
+  color:rgba(255,255,255,.32);
+  padding:4px 12px;
+  border-right:1px solid rgba(255,255,255,.1);
+  transition:color .3s;
+}
+.ft-links a:last-child{border-right:none;}
+.ft-links a:hover{color:rgba(255,255,255,.7);}
+.ft-copy{font-size:10px;color:rgba(255,255,255,.18);}
+
+/* =============================================================
+   FLOATING CTA
+============================================================= */
+.floating-cta{
+  position:fixed;bottom:0;left:0;right:0;z-index:290;
+  background:rgba(13,17,23,.94);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-top:1px solid rgba(255,255,255,.1);
+  padding:12px 16px;
+  display:flex;align-items:center;gap:12px;
+  transform:translateY(100%);
+  transition:transform .4s cubic-bezier(.4,0,.2,1);
+}
+.floating-cta.show{transform:translateY(0);}
+.fc-info{}
+.fc-name{font-size:10px;color:rgba(255,255,255,.35);letter-spacing:.1em;}
+.fc-price{
+  font-family:'Cormorant Garamond',serif;
+  font-size:22px;font-weight:300;color:#fff;
+  line-height:1;
+}
+.fc-price span{font-size:11px;font-family:'Noto Sans JP',sans-serif;font-weight:300;color:rgba(255,255,255,.4);}
+.fc-btn{
+  flex:1;
+  background:#fff;color:var(--navy);
+  font-size:12.5px;font-weight:500;
+  letter-spacing:.1em;
+  padding:14px 18px;
+  text-align:center;
+  border:none;
+  transition:background .3s;
+  display:block;
+  text-align:center;
+}
+.fc-btn:hover{background:var(--pale-blue);}
+
+/* =============================================================
+   RESPONSIVE
+============================================================= */
+@media(min-width:640px){
+  .hero-headline{font-size:clamp(60px,14vw,96px);}
+  .trust-cards{grid-template-columns:1fr 1fr;}
+  .product-grid{
+    flex-direction:row;
+    align-items:center;
+  }
+  .product-img-wrap{max-width:280px;flex-shrink:0;}
+  .anchor-compare{flex-direction:column;}
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== HEADER ===================== -->
+<header class="site-header" id="siteHeader">
+  <div class="hdr-logo">
+    DDS iPS&#8209;X
+    <span>by SAISEI</span>
+  </div>
+  <a href="#purchase" class="hdr-btn">今すぐ購入</a>
+</header>
+
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="hero">
+  <!-- Full-bleed model image — cropped to face/eye area by object-position -->
+  <img
+    src="picture/IMG_4267 - コピー.jpeg"
+    alt="DDS iPS-X"
+    class="hero-bg"
+  >
+  <div class="hero-overlay"></div>
+  <div class="hero-glow"></div>
+
+  <div class="hero-content">
+    <span class="hero-eyebrow">SAISEI REGENERATIVE BEAUTY</span>
+    <h1 class="hero-headline">
+      細胞が、<br>目を覚ます。
+      <em>DDS iPS-X &nbsp;— 人工多能性幹細胞培養液</em>
+    </h1>
+    <p class="hero-sub">
+      再生医療の知見と、独自の浸透技術。<br>
+      エイジングケア<sup>※</sup>の、最終形。
+    </p>
+    <div class="hero-actions">
+      <a href="#purchase" class="hero-cta-main">今すぐ購入する →</a>
+      <span class="hero-cta-sub">10mL / 約1ヶ月分 &nbsp;¥16,500（税込）</span>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+    <div class="hero-scroll-text">scroll</div>
+  </div>
+</section>
+
+
+<!-- ===================== MARQUEE ===================== -->
+<div class="marquee-wrap" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="marquee-item">iPS幹細胞培養液配合</span>
+    <span class="marquee-item">9種の成長因子</span>
+    <span class="marquee-item">DDS浸透技術</span>
+    <span class="marquee-item">エクソソーム配合</span>
+    <span class="marquee-item">モンドセレクション受賞</span>
+    <span class="marquee-item">自社工場製造</span>
+    <span class="marquee-item">年間100万本の実績</span>
+    <span class="marquee-item">iPS幹細胞培養液配合</span>
+    <span class="marquee-item">9種の成長因子</span>
+    <span class="marquee-item">DDS浸透技術</span>
+    <span class="marquee-item">エクソソーム配合</span>
+    <span class="marquee-item">モンドセレクション受賞</span>
+    <span class="marquee-item">自社工場製造</span>
+    <span class="marquee-item">年間100万本の実績</span>
+  </div>
+</div>
+
+
+<!-- ===================== PAIN ===================== -->
+<section class="sec sec-dark reveal">
+  <div class="container">
+    <span class="eyebrow eyebrow-silver">Your Concerns</span>
+    <h2 class="sec-title">
+      こんな思い、<br>ありませんか？
+    </h2>
+    <ul class="pain-list">
+      <li class="pain-item reveal d1">
+        <span class="pain-mark">—</span>
+        <span class="pain-text">丁寧にケアしているのに、鏡を見るたびに「なんか老けた」と感じる</span>
+      </li>
+      <li class="pain-item reveal d2">
+        <span class="pain-mark">—</span>
+        <span class="pain-text">ハリ・うるおいが落ちて、くすみや毛穴が年々気になるようになってきた</span>
+      </li>
+      <li class="pain-item reveal d3">
+        <span class="pain-mark">—</span>
+        <span class="pain-text">何万円もする美容液を試し続けたのに、「これだ」という手応えがまだない</span>
+      </li>
+      <li class="pain-item reveal d4">
+        <span class="pain-mark">—</span>
+        <span class="pain-text">美容クリニックが気になるが、費用・時間・怖さで踏み出せずにいる</span>
+      </li>
+      <li class="pain-item reveal d5">
+        <span class="pain-mark">—</span>
+        <span class="pain-text">スキンケアを変えたくはないが、もう一段上のケアをプラスしたい</span>
+      </li>
+    </ul>
+
+    <div class="pain-bottom reveal" style="margin-top:36px;">
+      <div class="pain-bottom-title">
+        その悩みの根本は、<br>「成分が届いていない」ことかもしれない。
+      </div>
+      <div class="pain-bottom-body">
+        どれだけ高価な成分を塗っても、<br>
+        届くべき場所まで到達しなければ、肌は変わりません。
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== ROOT CAUSE ===================== -->
+<section class="sec cause-section reveal">
+  <div class="container">
+    <span class="eyebrow eyebrow-silver">The Root Cause</span>
+    <h2 class="sec-title">
+      なぜ、どれだけ塗っても<br>届かないのか。
+    </h2>
+    <p class="cause-body">
+      一般的な美容液の成分は、<strong>肌の表面（角質層）で止まってしまう</strong>ことがほとんどです。
+      ターンオーバーの要となる表皮、コラーゲン・エラスチンが存在する真皮層——
+      本来ケアしたい層に、成分は届いていません。<br><br>
+      これは成分の「質」ではなく、<strong>「届け方の設計」の問題</strong>です。
+    </p>
+
+    <!-- Visual: skin layer bars -->
+    <div class="cause-wall reveal">
+      <div class="cause-wall-inner">
+        <div class="wall-row">
+          <div class="wall-label">角質層</div>
+          <div class="wall-bar-wrap">
+            <div class="wall-bar wall-bar-animated" style="--w:90%; background:linear-gradient(90deg,#A8C8DC,#DDB8C8);" data-width="90%"></div>
+            <span class="wall-note">多くの美容液はここまで</span>
+          </div>
+        </div>
+        <div class="wall-row">
+          <div class="wall-label">表皮</div>
+          <div class="wall-bar-wrap">
+            <div class="wall-bar wall-bar-animated" style="--w:45%; background:#6FA8C8;" data-width="45%"></div>
+            <span class="wall-note">ターンオーバーが行われる層</span>
+          </div>
+        </div>
+        <div class="wall-row">
+          <div class="wall-label">真皮</div>
+          <div class="wall-bar-wrap">
+            <div class="wall-bar wall-bar-animated" style="--w:18%; background:#2A4D6E;" data-width="18%"></div>
+            <span class="wall-note">コラーゲン・エラスチンの層</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cause-arrow reveal">
+      <span class="cause-arrow-icon">↓</span>
+      DDS iPS-X が解決する
+    </div>
+
+    <div class="cause-resolution reveal">
+      <div class="cause-resolution-title">
+        「届ける技術」と「届けるべき成分」を<br>同時に実現した、次世代美容液
+      </div>
+      <div class="cause-resolution-body">
+        SAISEIが独自開発したDDS技術と、iPS幹細胞培養液の融合。
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== EYE STRIP (creative image crop) ===================== -->
+<div class="eye-strip" aria-hidden="true">
+  <!-- Shows only the eye area of the model — crop via object-position -->
+  <img
+    src="picture/IMG_4267 - コピー.jpeg"
+    alt=""
+    class="eye-strip-img"
+  >
+  <div class="eye-strip-text">
+    <p class="eye-strip-copy">
+      この目に映る世界を、<br>もっと輝かせるために。
+    </p>
+  </div>
+</div>
+
+
+<!-- ===================== BOTTLE PARALLAX (creative crop) ===================== -->
+<div class="bottle-parallax reveal">
+  <!-- Dark DNA-helix bottle image, cropped center, heavy overlay -->
+  <img
+    src="picture/IMG_4266 - コピー.jpeg"
+    alt=""
+    class="bottle-parallax-bg"
+  >
+  <div class="bottle-parallax-content">
+    <div class="bp-label">DDS iPS-X — Solution</div>
+    <h2 class="bp-headline">
+      初めて、<em>突破した。</em>
+    </h2>
+    <p class="bp-sub">iPS幹細胞培養液 &times; DDS浸透技術</p>
+  </div>
+</div>
+
+
+<!-- ===================== PRODUCT INTRO ===================== -->
+<section class="sec product-intro-section reveal">
+  <div class="container">
+    <div class="product-grid">
+      <div class="product-img-wrap">
+        <img
+          src="picture/IMG_4266 - コピー.jpeg"
+          alt="DDS iPS-X"
+        >
+      </div>
+      <div>
+        <span class="eyebrow eyebrow-silver">Product</span>
+        <div class="product-name-en">DDS iPS&#8209;X</div>
+        <div class="product-name-jp">人工多能性幹細胞培養液 / 美容液</div>
+        <div class="divider-h divider-h-left"></div>
+        <p class="product-desc">
+          再生医療の研究知見を応用した、iPS幹細胞培養液を配合した次世代エイジングケア美容液。
+          SAISEIが独自開発したDDS（Drug Delivery System）技術により、
+          豊富な成長因子を肌へ的確になじませます。毎日のスキンケアに1プッシュ加えるだけ。
+        </p>
+        <div class="product-tags">
+          <span class="tag">iPS幹細胞培養液</span>
+          <span class="tag">9種の成長因子</span>
+          <span class="tag">DDS浸透技術</span>
+          <span class="tag">エクソソーム配合</span>
+          <span class="tag">自社工場製造</span>
+          <span class="tag">混ぜ使いOK</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== TECHNOLOGY ===================== -->
+<section class="sec tech-section">
+  <div class="container">
+    <span class="eyebrow eyebrow-silver">Technology</span>
+    <h2 class="sec-title">
+      3つの理由で、<br>根本的に違う。
+    </h2>
+
+    <div class="tech-blocks">
+
+      <!-- Tech 01: iPS -->
+      <div class="tech-block reveal">
+        <div class="tech-num">01</div>
+        <span class="tech-en">iPS Stem Cell Culture Medium</span>
+        <h3 class="tech-title">iPS幹細胞由来の培養液。<br>老化因子を含まない、若い細胞の力。</h3>
+        <p class="tech-body">
+          iPS細胞（人工多能性幹細胞）は、<strong>山中伸弥教授のノーベル賞受賞研究</strong>で世界的な注目を集め、
+          再生医療の最前線で活用が進む細胞です。DDS iPS-Xには、このiPS幹細胞を培養する過程で得られる
+          「培養液」を配合。培養液にはEGF・bFGF・HGFなど<strong>9種の成長因子とエクソソーム</strong>が豊富に含まれており、
+          一般的な間葉系幹細胞（MSC）由来の培養液と比べ、成長因子の種類・多様性が格段に異なります。
+          老化因子を含まない、若い細胞由来のシグナル——それがDDS iPS-Xの核心です。
+        </p>
+        <div class="tech-callout">
+          &#9733;&nbsp; iPS幹細胞：あらゆる細胞に分化できる「多能性」と、ほぼ無限に増やせる「自己複製能」を持つ次世代の細胞
+        </div>
+
+        <table class="compare-dark" style="margin-top:22px;">
+          <thead>
+            <tr>
+              <th>比較</th>
+              <th>間葉系幹細胞（MSC）</th>
+              <th class="ips-col">iPS幹細胞</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>分化能力</td>
+              <td>限定的（骨・筋肉・皮膚）</td>
+              <td class="ips-val">ほぼすべての細胞</td>
+            </tr>
+            <tr>
+              <td>増殖能力</td>
+              <td>限られている</td>
+              <td class="ips-val">非常に高い</td>
+            </tr>
+            <tr>
+              <td>成長因子の種類</td>
+              <td>比較的限定的</td>
+              <td class="ips-val">多様かつ豊富</td>
+            </tr>
+            <tr>
+              <td>老化因子</td>
+              <td>含まれる場合あり</td>
+              <td class="ips-val">含まない</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Tech 02: DDS -->
+      <div class="tech-block reveal">
+        <div class="tech-num">02</div>
+        <span class="tech-en">Drug Delivery System</span>
+        <h3 class="tech-title">DDS技術で、成分を<br>的確になじませる。</h3>
+        <p class="tech-body">
+          DDS（Drug Delivery System）とは、有効成分を<strong>「必要な場所へ、必要な量だけ届ける」</strong>ための技術。
+          SAISEIが独自に研究・開発したこの技術により、iPS幹細胞培養液に含まれる成長因子が
+          肌へよりスムーズになじみます。他社には導入されていない独自アプローチ。
+          「いい成分を入れるだけ」では終わらない、SAISEIの設計思想です。
+        </p>
+        <div class="tech-callout">
+          &#9733;&nbsp; DDS = Drug Delivery System（薬物送達システム）。成分の質だけでなく、届け方の設計にこだわる
+        </div>
+      </div>
+
+      <!-- Tech 03: Manufacturing -->
+      <div class="tech-block reveal">
+        <div class="tech-num">03</div>
+        <span class="tech-en">Self-Managed Factory</span>
+        <h3 class="tech-title">自社工場製造で、<br>高品質を実現。</h3>
+        <p class="tech-body">
+          一貫した自社工場製造により、厳密な品質管理のもとで処方を実現。
+          美容クリニック・エステサロン・理美容サロンなどプロの現場からも信頼を得てきた品質基準を、
+          日常のホームケアにお届けします。<strong>高機能処方を適正価格で</strong>——それが自社製造の強みです。
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== LAB IMAGE (creative: bg with overlay) ===================== -->
+<div style="position:relative;height:280px;overflow:hidden;" aria-hidden="true">
+  <img
+    src="picture/S__66093058.jpg"
+    alt=""
+    style="
+      position:absolute;inset:0;width:100%;height:100%;
+      object-fit:cover;object-position:center 28%;
+      filter:brightness(.55) saturate(.55) contrast(1.15);
+    "
+  >
+  <!-- Top/bottom fade -->
+  <div style="
+    position:absolute;inset:0;
+    background:linear-gradient(to bottom, var(--dark) 0%, rgba(13,17,23,.25) 28%, rgba(13,17,23,.25) 72%, var(--black) 100%);
+  "></div>
+  <div style="
+    position:absolute;inset:0;
+    display:flex;align-items:center;justify-content:center;
+    padding:0 24px;text-align:center;
+  ">
+    <div>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:var(--silver);margin-bottom:14px;">Latest iPS Cell Regenerative Medicine Research</p>
+      <p style="font-family:'Noto Serif JP',serif;font-size:clamp(18px,4.5vw,28px);font-weight:200;color:#fff;line-height:1.6;letter-spacing:.06em;">
+        再生医療の最前線から<br>生まれた成分を、あなたへ。
+      </p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===================== GROWTH FACTORS ===================== -->
+<section class="sec gf-section reveal">
+  <div class="container">
+    <span class="eyebrow eyebrow-silver">Ingredients</span>
+    <h2 class="sec-title">9種の成長因子</h2>
+    <p style="font-size:13px;color:var(--text-mid);margin-top:-10px;margin-bottom:4px;">iPS幹細胞培養液に豊富に含まれる多様な成長因子群</p>
+
+    <div class="gf-grid">
+      <div class="gf-card reveal d1">
+        <div class="gf-name">EGF</div>
+        <div class="gf-full">Epidermal Growth Factor（表皮細胞成長因子）</div>
+        <div class="gf-desc">表皮細胞の増殖・分化に関与。新陳代謝やターンオーバーをサポートする成分として注目</div>
+      </div>
+      <div class="gf-card reveal d2">
+        <div class="gf-name">bFGF</div>
+        <div class="gf-full">Basic Fibroblast Growth Factor（塩基性線維芽細胞増殖因子）</div>
+        <div class="gf-desc">血管・皮膚・筋肉などの細胞に作用。細胞の分化と増殖をコントロールする</div>
+      </div>
+      <div class="gf-card reveal d1">
+        <div class="gf-name">HGF</div>
+        <div class="gf-full">Hepatocyte Growth Factor（幹細胞増殖因子）</div>
+        <div class="gf-desc">肌細胞の増殖促進、形態形成誘導、血管新生などに関わる多機能な成長因子</div>
+      </div>
+      <div class="gf-card reveal d2">
+        <div class="gf-name">KGF</div>
+        <div class="gf-full">Keratinocyte Growth Factor（上皮細胞成長因子）</div>
+        <div class="gf-desc">毛母細胞に働きかけ、発毛・育毛効果をサポートする成分</div>
+      </div>
+      <div class="gf-card reveal d1">
+        <div class="gf-name">VEGF</div>
+        <div class="gf-full">Vascular Endothelial Growth Factor（血管内皮増殖因子）</div>
+        <div class="gf-desc">血管新生に重要な役割を果たす成長因子</div>
+      </div>
+      <div class="gf-card reveal d2">
+        <div class="gf-name">aFGF</div>
+        <div class="gf-full">Acidic Fibroblast Growth Factor（線維芽細胞成長因子）</div>
+        <div class="gf-desc">真皮の線維芽細胞を刺激し増殖させる。美白効果にも注目</div>
+      </div>
+      <div class="gf-card reveal d1">
+        <div class="gf-name">TGFβ</div>
+        <div class="gf-full">Transforming Growth Factor-β</div>
+        <div class="gf-desc">抗炎症作用などがあり、肌のコンディションを整える</div>
+      </div>
+      <div class="gf-card reveal d2">
+        <div class="gf-name">PDGF</div>
+        <div class="gf-full">Platelet-Derived Growth Factor（血小板由来成長因子）</div>
+        <div class="gf-desc">組織修復に関連する細胞を刺激し分裂を促進</div>
+      </div>
+      <div class="gf-card wide reveal">
+        <div class="gf-name">IGF&#8209;1</div>
+        <div class="gf-full">Insulin-like Growth Factor-1（インスリン様成長因子）</div>
+        <div class="gf-desc">新しい皮膚細胞の生成をサポートし、コラーゲン・エラスチン・ヒアルロン酸の産生を促進。肌のハリや弾力を整える成分として注目</div>
+      </div>
+    </div>
+
+    <div class="gf-summary-bar reveal">
+      <strong>成長因子がバランスよく含まれることが、培養液ならではの強み</strong>
+      <p>特定成分を単体で高配合するのとは異なり、iPS幹細胞培養液は多様な因子が<br>自然なバランスで共存するのが特徴。エクソソームやサイトカインも豊富に含まれる。</p>
+    </div>
+    <p style="font-size:10px;color:var(--text-lighter);text-align:center;margin-top:14px;">※ ヒト単核細胞人工多能性細胞順化培養液</p>
+  </div>
+</section>
+
+
+<!-- ===================== HOW TO USE ===================== -->
+<section class="sec how-section reveal">
+  <div class="container">
+    <span class="eyebrow">How To Use</span>
+    <h2 class="sec-title">使い方は、<br>シンプルに。</h2>
+    <p class="sec-body">今のスキンケアを変えなくていい。<strong>1プッシュ足すだけ。</strong></p>
+
+    <div class="steps-wrap">
+      <div class="steps-vline"></div>
+      <div class="step-row">
+        <div class="step-n">1</div>
+        <div>
+          <div class="step-title">洗顔後、手のひらへワンプッシュ</div>
+          <div class="step-body">1プッシュが1回分の目安。10mLで約1ヶ月分（約30回分）。少量でも顔全体に広がりやすいテクスチャーです。</div>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-n">2</div>
+        <div>
+          <div class="step-title">顔全体にやさしくなじませる</div>
+          <div class="step-body">手のひらで顔全体へ。または化粧水・乳液・クリームに混ぜてそのまま使用してもOKです。</div>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-n">3</div>
+        <div>
+          <div class="step-title">いつものスキンケアを続ける</div>
+          <div class="step-body">DDS iPS-Xを「プラスアルファ」として取り入れるだけ。普段のルーティンをそのまま続けてください。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mix-note reveal">
+      <div class="mix-note-title">✦ 混ぜ使いOK ✦</div>
+      <div class="mix-note-body">
+        お持ちの化粧水・乳液・クリームにそのまま混ぜて使用できます。<br>
+        スキンケアのルーティンを一切変えずに、エイジングケア<sup>※</sup>を一段上へ。
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== TRUST ===================== -->
+<section class="sec trust-section reveal">
+  <div class="container">
+    <span class="eyebrow eyebrow-silver">Trust &amp; Credentials</span>
+    <h2 class="sec-title">SAISEIが選ばれる理由</h2>
+
+    <!-- Counter: 100万本 -->
+    <div class="counter-wrap reveal">
+      <div>
+        <span class="counter-num" id="counterNum">0</span>
+        <span class="counter-unit">万本</span>
+      </div>
+      <div class="counter-label">同社製品・年間販売実績</div>
+    </div>
+
+    <div class="trust-cards">
+      <div class="trust-card reveal d1">
+        <div class="t-label">Award</div>
+        <div class="t-value">モンドセレクション<br>受賞</div>
+        <div class="t-sub">国際的な品質評価機関による認定。品質へのこだわりを証明する権威ある受賞歴</div>
+      </div>
+      <div class="trust-card reveal d2">
+        <div class="t-label">Technology</div>
+        <div class="t-value">再生医療の知見<br>を応用</div>
+        <div class="t-sub">美容クリニック・エステサロン・理美容サロンへの提供実績。プロが選ぶ品質</div>
+      </div>
+      <div class="trust-card reveal d1">
+        <div class="t-label">Manufacturing</div>
+        <div class="t-value">自社工場<br>一貫製造</div>
+        <div class="t-sub">自社工場での厳密な品質管理。高機能処方を適正価格でお届けする</div>
+      </div>
+      <div class="trust-card reveal d2">
+        <div class="t-label">Research</div>
+        <div class="t-value">専門分野の<br>研究・開発</div>
+        <div class="t-sub">再生医療・専門分野の研究知見を応用した製品開発。科学的根拠に基づく設計</div>
+      </div>
+    </div>
+
+    <div class="award-line reveal">
+      <div class="award-badge">&#11088;&nbsp; モンドセレクション受賞ブランド &nbsp;&#11088;</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== PRICE ANCHOR ===================== -->
+<section class="sec anchor-section reveal">
+  <div class="container">
+    <span class="eyebrow eyebrow-silver">Value</span>
+    <h2 class="sec-title">
+      クリニック品質を、<br>日常へ。
+    </h2>
+    <p class="sec-body">iPS幹細胞を扱う美容施術は専門機関でしか受けられず、費用も高額です。DDS iPS-Xは、同等の成分アプローチを日常のスキンケアとして手軽に取り入れられる唯一の選択肢です。</p>
+
+    <div class="anchor-compare">
+      <div class="anchor-row reveal d1">
+        <div class="anchor-row-label">美容クリニック（幹細胞関連施術）</div>
+        <div class="anchor-row-price">¥50,000〜</div>
+      </div>
+      <div class="anchor-row reveal d2">
+        <div class="anchor-row-label">高級エステ（成長因子ケア）</div>
+        <div class="anchor-row-price">¥20,000〜</div>
+      </div>
+      <div class="anchor-row highlight reveal d3">
+        <div class="anchor-row-label"><strong>DDS iPS-X（1ヶ月分）</strong></div>
+        <div class="anchor-row-price">¥16,500</div>
+      </div>
+    </div>
+    <p class="anchor-note">※ クリニック・エステの価格は一般的な市場価格の参考値です。施術内容・効果・サービスとは異なります。</p>
+  </div>
+</section>
+
+
+<!-- ===================== RECOMMEND ===================== -->
+<section class="sec recommend-section reveal">
+  <div class="container">
+    <span class="eyebrow">Recommended For</span>
+    <h2 class="sec-title">こんな方に<br>使っていただきたい</h2>
+    <ul class="rec-list">
+      <li class="rec-item reveal d1">30代後半以降、ハリ・うるおいの変化を感じ始めた方</li>
+      <li class="rec-item reveal d2">高機能なスキンケアを試してきたが、いまいち手応えを感じていない方</li>
+      <li class="rec-item reveal d3">美容クリニックが気になるが、まずホームケアで本格的なアプローチをしたい方</li>
+      <li class="rec-item reveal d4">ルーティンを変えずに、プラスアルファのエイジングケア<sup>※</sup>を取り入れたい方</li>
+      <li class="rec-item reveal d5">成分にこだわりがあり、「本物の有効成分」を日常ケアに取り入れたい美容意識の高い方</li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- ===================== PURCHASE CTA ===================== -->
+<section class="sec cta-section" id="purchase">
+  <div class="container">
+    <div class="tc reveal">
+      <span class="eyebrow">Purchase</span>
+      <h2 class="sec-title">DDS iPS-X を<br>はじめる</h2>
+    </div>
+
+    <div class="purchase-card reveal">
+      <div class="pc-name">DDS iPS&#8209;X</div>
+      <div class="pc-sub">人工多能性幹細胞培養液 / 美容液</div>
+
+      <div class="pc-specs">
+        <div>
+          <div class="pc-spec-label">内容量</div>
+          <div class="pc-spec-val">10mL</div>
+        </div>
+        <div>
+          <div class="pc-spec-label">使用目安</div>
+          <div class="pc-spec-val">約1ヶ月分</div>
+        </div>
+        <div>
+          <div class="pc-spec-label">1回使用量</div>
+          <div class="pc-spec-val">1プッシュ</div>
+        </div>
+      </div>
+
+      <div class="pc-price">¥16,500<sup>税込</sup></div>
+      <div class="pc-tax">希望小売価格 / 税別 ¥15,000</div>
+      <div class="pc-badge">1日あたり約550円のiPS幹細胞ケア</div>
+
+      <a href="#" class="btn-buy">
+        購入ページへ進む
+        <small>公式ECサイトへ移動します</small>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== FAQ ===================== -->
+<section class="sec faq-section">
+  <div class="container reveal">
+    <span class="eyebrow">FAQ</span>
+    <h2 class="sec-title">よくあるご質問</h2>
+    <div class="faq-list">
+
+      <details class="faq-item">
+        <summary class="faq-q">
+          <span class="faq-q-q">Q</span>
+          <span class="faq-q-t">どんな肌悩みに向いていますか？</span>
+          <span class="faq-q-ic">+</span>
+        </summary>
+        <div class="faq-a">ハリ・うるおいの低下、くすみ、キメの乱れが気になる方に特に適しています。エイジングサインが出始めた30代後半以降の方に多くご使用いただいています。肌質を問わず使用できますが、はじめての方はパッチテストをおすすめします。</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">
+          <span class="faq-q-q">Q</span>
+          <span class="faq-q-t">今使っているスキンケアと一緒に使えますか？</span>
+          <span class="faq-q-ic">+</span>
+        </summary>
+        <div class="faq-a">はい。洗顔後にそのまま顔全体になじませるか、お持ちの化粧水・乳液・クリームに混ぜてご使用いただけます。スキンケアのルーティンを変えずに、1プッシュ足すだけでOKです。</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">
+          <span class="faq-q-q">Q</span>
+          <span class="faq-q-t">10mLは少なくないですか？</span>
+          <span class="faq-q-ic">+</span>
+        </summary>
+        <div class="faq-a">1回の使用量はワンプッシュです。10mLで約1ヶ月分（約30回分）使用できます。成分密度の高い処方のため、少量でも顔全体に十分になじみます。</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">
+          <span class="faq-q-q">Q</span>
+          <span class="faq-q-t">いつ頃から変化を感じますか？</span>
+          <span class="faq-q-ic">+</span>
+        </summary>
+        <div class="faq-a">個人差がありますが、継続的にお使いいただくことでうるおいやキメの変化をご実感いただきやすくなります。効果・効能には個人差があります。</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">
+          <span class="faq-q-q">Q</span>
+          <span class="faq-q-t">敏感肌でも使えますか？</span>
+          <span class="faq-q-ic">+</span>
+        </summary>
+        <div class="faq-a">敏感肌の方にもお使いいただけるよう設計していますが、肌質・体調によって合わない場合があります。はじめての方は腕の内側などでパッチテストを行い、異常があればご使用を中止し皮膚科にご相談ください。</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">
+          <span class="faq-q-q">Q</span>
+          <span class="faq-q-t">「iPS幹細胞培養液」とは何ですか？</span>
+          <span class="faq-q-ic">+</span>
+        </summary>
+        <div class="faq-a">iPS細胞（人工多能性幹細胞）を培養する過程で産生される液体成分が「培養液」です。EGF・bFGF・HGFなどの多様な成長因子（サイトカイン）やエクソソームが豊富に含まれており、再生医療分野で注目されているiPS細胞研究から生まれた次世代の美容成分です。</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">
+          <span class="faq-q-q">Q</span>
+          <span class="faq-q-t">DDS技術とは何ですか？</span>
+          <span class="faq-q-ic">+</span>
+        </summary>
+        <div class="faq-a">DDS（Drug Delivery System）は「必要な成分を、必要な場所へ、必要な量だけ届ける」ための技術です。SAISEIが独自に研究・開発したこの技術により、成分が肌へよりスムーズになじむよう設計されています。</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">
+          <span class="faq-q-q">Q</span>
+          <span class="faq-q-t">美容クリニックやエステで使われているものと同じですか？</span>
+          <span class="faq-q-ic">+</span>
+        </summary>
+        <div class="faq-a">SAISEIは美容クリニック・エステサロン・理美容サロン向けにも製品を提供しています。DDS iPS-Xは同じSAISEIの技術・品質管理のもとで製造されたホームケア向け製品です。</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">
+          <span class="faq-q-q">Q</span>
+          <span class="faq-q-t">男性でも使えますか？</span>
+          <span class="faq-q-ic">+</span>
+        </summary>
+        <div class="faq-a">はい、男性の方にもお使いいただけます。エイジングケア<sup>※</sup>は性別を問わない大切なスキンケアです。</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">
+          <span class="faq-q-q">Q</span>
+          <span class="faq-q-t">成分・原材料の詳細を教えてください</span>
+          <span class="faq-q-ic">+</span>
+        </summary>
+        <div class="faq-a">詳細な成分・原材料表示については、製品パッケージまたは公式ECサイトの商品詳細ページをご確認ください。アレルギーをお持ちの方はご使用前に成分をご確認ください。</div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== FINAL CTA ===================== -->
+<section class="final-cta reveal">
+  <span class="eyebrow eyebrow-silver" style="margin-bottom:20px;display:block;">Order</span>
+  <h2 class="sec-title" style="color:#fff;font-size:clamp(24px,6vw,38px);">
+    再生美容を、<br>毎日のルーティンに。
+  </h2>
+  <div class="divider-h" style="margin:20px auto;"></div>
+  <p style="font-size:13px;color:rgba(255,255,255,.5);margin-bottom:8px;letter-spacing:.1em;">DDS iPS-X &nbsp;多能性幹細胞培養液 &nbsp;10mL</p>
+  <div class="final-price">¥16,500<small style="font-size:14px;font-family:'Noto Sans JP';font-weight:300;">（税込）</small></div>
+  <div class="final-price-sub">希望小売価格 / 約1ヶ月分</div>
+  <a href="#purchase" class="btn-final btn-final-arrow">商品ページで購入する</a>
+</section>
+
+
+<!-- ===================== FOOTNOTES ===================== -->
+<div style="background:#0A0D12;">
+  <div class="footnotes">
+    ※ エイジングケアとは、年齢に応じたスキンケアのことです。<br>
+    ※ 効果・効能には個人差があります。<br>
+    ※ 本製品は化粧品です。医薬品・医薬部外品ではありません。<br>
+    ※ ヒト単核細胞人工多能性細胞順化培養液を配合。<br>
+    ※ 記載の内容は成分・特長の説明であり、特定の効果・効能を保証するものではありません。
+  </div>
+</div>
+
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="ft-logo">DDS iPS&#8209;X</div>
+  <div class="ft-brand">by SAISEI</div>
+  <div class="ft-links">
+    <a href="#">特定商取引法に基づく表記</a>
+    <a href="#">プライバシーポリシー</a>
+    <a href="#">お問い合わせ</a>
+    <a href="#">会社概要</a>
+  </div>
+  <div class="ft-copy">&copy; SAISEI. All Rights Reserved.</div>
+</footer>
+
+
+<!-- ===================== FLOATING CTA ===================== -->
+<div class="floating-cta" id="floatingCta" aria-hidden="true">
+  <div class="fc-info">
+    <div class="fc-name">DDS iPS&#8209;X</div>
+    <div class="fc-price">¥16,500<span>&nbsp;税込</span></div>
+  </div>
+  <a href="#purchase" class="fc-btn">今すぐ購入 →</a>
+</div>
+
+
+<!-- ===================== SCRIPTS ===================== -->
+<script>
+// --- Header: add scrolled class ---
+const hdr = document.getElementById('siteHeader');
+window.addEventListener('scroll', () => {
+  hdr.classList.toggle('scrolled', window.scrollY > 60);
+}, { passive: true });
+
+// --- Intersection Observer: reveal ---
+const reveals = document.querySelectorAll('.reveal');
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      revealObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+reveals.forEach(el => revealObs.observe(el));
+
+// --- Bar width animation ---
+const bars = document.querySelectorAll('.wall-bar-animated');
+const barObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('grow');
+      barObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.3 });
+bars.forEach(b => barObs.observe(b));
+
+// --- Counter animation: 0 → 100 (万本) ---
+const counterEl = document.getElementById('counterNum');
+let counterDone = false;
+const counterObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting && !counterDone) {
+      counterDone = true;
+      let start = 0;
+      const end = 100;
+      const duration = 1800;
+      const step = end / (duration / 16);
+      const tick = () => {
+        start = Math.min(start + step, end);
+        counterEl.textContent = Math.floor(start);
+        if (start < end) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+      counterObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.4 });
+if (counterEl) counterObs.observe(counterEl);
+
+// --- Floating CTA ---
+const heroEl = document.getElementById('hero');
+const floatingCta = document.getElementById('floatingCta');
+const fcObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      floatingCta.classList.remove('show');
+      floatingCta.setAttribute('aria-hidden', 'true');
+    } else {
+      floatingCta.classList.add('show');
+      floatingCta.setAttribute('aria-hidden', 'false');
+    }
+  });
+}, { threshold: 0.05 });
+if (heroEl) fcObs.observe(heroEl);
+
+// --- Smooth anchor scrolling ---
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+</script>
+
+</body>
+</html>
