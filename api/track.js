@@ -3,13 +3,13 @@ const kv = new Redis({ url: process.env.KV_REST_API_URL, token: process.env.KV_R
 
 function refSource(ref) {
   if (!ref) return 'ダイレクト';
-  if (/google/i.test(ref))                   return 'Google';
-  if (/yahoo/i.test(ref))                    return 'Yahoo!';
-  if (/instagram/i.test(ref))                return 'Instagram';
-  if (/facebook|fb\.com/i.test(ref))         return 'Facebook';
-  if (/twitter|t\.co|x\.com/i.test(ref))     return 'X (Twitter)';
-  if (/line/i.test(ref))                     return 'LINE';
-  if (/tiktok/i.test(ref))                   return 'TikTok';
+  if (/google/i.test(ref))               return 'Google';
+  if (/yahoo/i.test(ref))                return 'Yahoo!';
+  if (/instagram/i.test(ref))            return 'Instagram';
+  if (/facebook|fb\.com/i.test(ref))     return 'Facebook';
+  if (/twitter|t\.co|x\.com/i.test(ref)) return 'X (Twitter)';
+  if (/line/i.test(ref))                 return 'LINE';
+  if (/tiktok/i.test(ref))              return 'TikTok';
   return 'その他';
 }
 
@@ -27,6 +27,7 @@ export default async function handler(req, res) {
   const today = new Date().toISOString().slice(0, 10);
 
   try {
+    // ── ページビュー
     if (type === 'pageview') {
       const { sid, ref, dev } = data;
       const isNew = !(await kv.exists(`s:${sid}`));
@@ -50,6 +51,7 @@ export default async function handler(req, res) {
       }
     }
 
+    // ── スクロール深度
     if (type === 'scroll') {
       const { sid, depth } = data;
       const cur = Number(await kv.hget(`s:${sid}`, 'maxS') || 0);
@@ -61,11 +63,36 @@ export default async function handler(req, res) {
       }
     }
 
+    // ── CTAクリック
+    if (type === 'cta_click') {
+      const { sid, label } = data;
+      await kv.incr('cta:total');
+      await kv.incr(`cta:${today}`);
+      await kv.hincrby('cta:labels', (label || '').slice(0, 40), 1);
+      await kv.hset(`s:${sid}`, { cta: 1 });
+    }
+
+    // ── セクション到達
+    if (type === 'section_view') {
+      const { section } = data;
+      if (section) await kv.hincrby('sections', section, 1);
+    }
+
+    // ── FAQ開封
+    if (type === 'faq_open') {
+      await kv.incr('faq:total');
+      await kv.incr(`faq:${today}`);
+      await kv.hincrby('faq:items', String(data.index || 0), 1);
+    }
+
+    // ── 離脱
     if (type === 'leave') {
       const { sid, sec, maxS } = data;
+      const isQuick = sec < 30 ? 1 : 0;
       await kv.hset(`s:${sid}`, { dur: sec, maxS });
       await kv.incrby('dur:total', Math.min(sec, 3600));
       await kv.incr('dur:count');
+      if (isQuick) await kv.incr('bounce:count');
     }
 
     res.status(200).json({ ok: 1 });
