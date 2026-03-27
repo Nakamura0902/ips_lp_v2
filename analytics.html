@@ -212,6 +212,68 @@ body{
   .kpi-grid{grid-template-columns:1fr 1fr;}
   .kpi-value{font-size:24px;}
 }
+
+/* ── PDF BUTTON ── */
+.pdf-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:12px;font-weight:500;letter-spacing:.04em;
+  color:#fff;background:var(--blue);
+  border:none;border-radius:6px;padding:6px 16px;cursor:pointer;
+  transition:all .2s;
+}
+.pdf-btn:hover{background:#2d6a88;}
+
+/* ── PRINT-ONLY ELEMENTS ── */
+.print-only{display:none;}
+
+/* ── PRINT TABLE ── */
+.p-table{width:100%;border-collapse:collapse;font-size:11px;margin-bottom:16px;}
+.p-table th{background:#EAF5FB;color:#1C2B3A;font-weight:500;padding:7px 10px;border:1px solid #DDE8EE;text-align:left;}
+.p-table td{padding:6px 10px;border:1px solid #DDE8EE;color:#4A6070;}
+.p-table tr:nth-child(even) td{background:#F6F8FA;}
+.p-table .num{text-align:right;font-variant-numeric:tabular-nums;}
+.p-table .bold{font-weight:500;color:#1C2B3A;}
+
+/* ─────────────────────────────────────────
+   PRINT / PDF
+───────────────────────────────────────── */
+@media print {
+  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;}
+  body{background:#fff!important;font-size:10pt;}
+  .nav,.pdf-btn,.demo-badge,.setup-banner{display:none!important;}
+  .print-only{display:block!important;}
+  .wrap{padding:0!important;max-width:100%!important;}
+
+  /* KPI カード */
+  .kpi-grid{grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:20px;}
+  .kpi{padding:12px 14px;border-radius:6px!important;}
+  .kpi-value{font-size:22pt!important;}
+  .kpi::before{height:3px!important;}
+
+  /* カード */
+  .card{box-shadow:none!important;border:1px solid #DDE8EE!important;border-radius:6px!important;padding:16px!important;margin-bottom:14px!important;}
+
+  /* チャート */
+  .chart-wrap canvas{max-height:180px!important;}
+  .donut-wrap canvas{max-height:160px!important;}
+
+  /* 2カラム */
+  .grid2{grid-template-columns:1fr 1fr;gap:12px;}
+
+  /* ファネル */
+  .funnel-row{padding:5px 0;}
+  .funnel-label{width:130px;}
+
+  /* インサイト */
+  .insights-grid{grid-template-columns:repeat(3,1fr);gap:8px;}
+  .insight{padding:12px!important;border-radius:6px!important;}
+  .insight-body{font-size:9pt!important;}
+
+  /* ページ区切り */
+  .print-page-break{page-break-before:always;padding-top:20px;}
+  .card{page-break-inside:avoid;}
+  .insight{page-break-inside:avoid;}
+}
 </style>
 </head>
 <body>
@@ -221,8 +283,24 @@ body{
   <div id="demoBadge" class="demo-badge" style="display:none">デモデータ表示中</div>
   <div class="nav-spacer"></div>
   <div class="nav-updated" id="updatedAt"></div>
+  <button class="pdf-btn" onclick="exportPDF()">&#x2193; PDF 出力</button>
   <a href="/index.html" class="nav-btn">← LP を見る</a>
 </nav>
+
+<!-- ══ 印刷専用ヘッダー ══ -->
+<div class="print-only" style="padding:32px 32px 24px;border-bottom:2px solid #3A7FA0;margin-bottom:28px;">
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;">
+    <div>
+      <p style="font-size:9pt;letter-spacing:.2em;color:#7A98AA;margin-bottom:6px;">SAISEI CO., LTD. — CONFIDENTIAL</p>
+      <h1 style="font-size:20pt;font-weight:300;color:#1C2B3A;letter-spacing:.04em;margin-bottom:4px;">DDS iPS-X アナリティクスレポート</h1>
+      <p style="font-size:9pt;color:#7A98AA;">LP: https://ips-lp-v2.vercel.app</p>
+    </div>
+    <div style="text-align:right;">
+      <p style="font-size:9pt;color:#7A98AA;">出力日</p>
+      <p id="printDate" style="font-size:11pt;font-weight:500;color:#1C2B3A;"></p>
+    </div>
+  </div>
+</div>
 
 <div class="wrap">
 
@@ -298,6 +376,32 @@ body{
   <div class="section-title">改善インサイト</div>
   <div class="insights-grid" id="insightsGrid"></div>
 
+  <!-- ══ 印刷専用データテーブル ══ -->
+  <div class="print-only print-page-break">
+    <div class="section-title" style="margin-bottom:16px;">数値データ一覧</div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:24px;">
+      <div>
+        <p style="font-size:11px;font-weight:500;color:#1C2B3A;margin-bottom:8px;">■ 流入元内訳</p>
+        <table class="p-table" id="printSrcTable"></table>
+      </div>
+      <div>
+        <p style="font-size:11px;font-weight:500;color:#1C2B3A;margin-bottom:8px;">■ デバイス内訳</p>
+        <table class="p-table" id="printDevTable"></table>
+      </div>
+    </div>
+
+    <p style="font-size:11px;font-weight:500;color:#1C2B3A;margin-bottom:8px;">■ スクロール到達率（セクション別）</p>
+    <table class="p-table" id="printScrollTable"></table>
+
+    <p style="font-size:11px;font-weight:500;color:#1C2B3A;margin:20px 0 8px;">■ 改善アクション一覧</p>
+    <table class="p-table" id="printInsightsTable"></table>
+
+    <p style="font-size:8pt;color:#A8BEC8;margin-top:32px;text-align:center;">
+      本レポートは DDS iPS-X LP Analytics システムより自動生成されました。
+    </p>
+  </div>
+
 </div><!-- /wrap -->
 
 <script>
@@ -362,6 +466,7 @@ async function init() {
   renderDonut('devChart','devLegend', d.dev, {'mobile':'モバイル','desktop':'デスクトップ','tablet':'タブレット'});
   renderFunnel(d);
   renderInsights(d);
+  renderPrintView(d);
 }
 
 /* ── KPI ── */
@@ -621,6 +726,67 @@ function getDemoData(){
     scrollDist:{10:892,20:754,30:621,40:498,50:389,60:298,70:221,80:167,90:124,100:83},
     trend,isDemo:true
   };
+}
+
+/* ── PRINT DATA TABLES ── */
+function renderPrintView(d) {
+  const today = new Date().toLocaleDateString('ja-JP',{year:'numeric',month:'long',day:'numeric'});
+  const el = document.getElementById('printDate');
+  if(el) el.textContent = today;
+
+  const sd = d.scrollDist;
+  const base = Number(sd[10] || d.uvTotal || 1);
+
+  // 流入元テーブル
+  const srcEntries = Object.entries(d.src||{}).sort((a,b)=>b[1]-a[1]);
+  const srcTotal = srcEntries.reduce((s,[,v])=>s+Number(v),0)||1;
+  let srcHtml = '<tr><th>流入元</th><th class="num">訪問数</th><th class="num">構成比</th></tr>';
+  srcEntries.forEach(([k,v])=>{
+    srcHtml += `<tr><td class="bold">${k}</td><td class="num">${Number(v).toLocaleString()}</td><td class="num">${Math.round(Number(v)/srcTotal*100)}%</td></tr>`;
+  });
+  srcHtml += `<tr><td class="bold">合計</td><td class="num">${srcTotal.toLocaleString()}</td><td class="num">100%</td></tr>`;
+  document.getElementById('printSrcTable').innerHTML = srcHtml;
+
+  // デバイステーブル
+  const devMap = {mobile:'モバイル',desktop:'デスクトップ',tablet:'タブレット'};
+  const devEntries = Object.entries(d.dev||{}).sort((a,b)=>b[1]-a[1]);
+  const devTotal = devEntries.reduce((s,[,v])=>s+Number(v),0)||1;
+  let devHtml = '<tr><th>デバイス</th><th class="num">訪問数</th><th class="num">構成比</th></tr>';
+  devEntries.forEach(([k,v])=>{
+    devHtml += `<tr><td class="bold">${devMap[k]||k}</td><td class="num">${Number(v).toLocaleString()}</td><td class="num">${Math.round(Number(v)/devTotal*100)}%</td></tr>`;
+  });
+  document.getElementById('printDevTable').innerHTML = devHtml;
+
+  // スクロール到達率テーブル
+  let scrollHtml = '<tr><th>セクション</th><th>スクロール位置</th><th class="num">到達数</th><th class="num">到達率</th><th class="num">前セクション比</th></tr>';
+  SECTIONS.forEach((sec,i)=>{
+    const cnt = Number(sd[sec.pct]||0);
+    const pct = base ? Math.round(cnt/base*100) : 0;
+    const prevCnt = i===0 ? base : Number(sd[SECTIONS[i-1].pct]||0);
+    const dropPct = prevCnt ? Math.round((prevCnt-cnt)/prevCnt*100) : 0;
+    const dropTxt = i===0 ? '—' : `-${dropPct}%`;
+    scrollHtml += `<tr><td class="bold">${sec.name}</td><td>${sec.sub}</td><td class="num">${cnt.toLocaleString()}</td><td class="num">${pct}%</td><td class="num" style="color:${dropPct>20?'#D06B7A':dropPct>10?'#E8956D':'#4CAF85'}">${dropTxt}</td></tr>`;
+  });
+  document.getElementById('printScrollTable').innerHTML = scrollHtml;
+
+  // インサイトテーブル（insightsGridから取得）
+  setTimeout(()=>{
+    const cards = document.querySelectorAll('.insight');
+    let insHtml = '<tr><th>カテゴリ</th><th>課題・評価</th><th>推奨アクション</th></tr>';
+    cards.forEach(card=>{
+      const title = card.querySelector('.insight-title')?.textContent||'';
+      const body = card.querySelector('.insight-body')?.textContent||'';
+      const action = card.querySelector('.insight-action')?.textContent||'';
+      const type = card.classList.contains('warn')?'要改善':card.classList.contains('good')?'良好':'参考';
+      insHtml += `<tr><td class="bold" style="white-space:nowrap">${type}</td><td>${title} — ${body.slice(0,60)}…</td><td class="bold">${action}</td></tr>`;
+    });
+    document.getElementById('printInsightsTable').innerHTML = insHtml;
+  }, 200);
+}
+
+/* ── EXPORT ── */
+function exportPDF() {
+  window.print();
 }
 
 init();
