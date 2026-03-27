@@ -1,5 +1,5 @@
 import { Redis } from '@upstash/redis';
-const kv = new Redis({ url: process.env.UPSTASH_REDIS_REST_URL, token: process.env.UPSTASH_REDIS_REST_TOKEN });
+const kv = new Redis({ url: process.env.KV_REST_API_URL, token: process.env.KV_REST_API_TOKEN });
 
 const DEMO = {
   pvTotal: 1284, uvTotal: 892, avgDur: 187,
@@ -19,7 +19,7 @@ export default async function handler(req, res) {
   res.setHeader('Cache-Control', 'no-store');
 
   // KV未設定時はデモデータ
-  if (!process.env.UPSTASH_REDIS_REST_URL) {
+  if (!process.env.KV_REST_API_URL) {
     return res.status(200).json(DEMO);
   }
 
